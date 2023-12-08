@@ -17,7 +17,6 @@ public class WineQualityPrediction {
                 .master("local[*]")
                 .getOrCreate();
 
-       // LogisticRegressionModel model = LogisticRegressionModel.load("src/main/resources/TrainedLogisticRegressionFinal");
         LogisticRegressionModel model = LogisticRegressionModel.load("/home/ubuntu/TrainedLogisticRegressionFinal");
 
 
@@ -25,7 +24,6 @@ public class WineQualityPrediction {
                 .option("header", "true")
                 .option("delimiter", ";")
                 .option("inferSchema", "true")
-               // .csv("src/main/resources/ValidationDataset.csv");
                 .csv("ValidationDataset.csv");
 
         String[] originalCols = newData.columns();
